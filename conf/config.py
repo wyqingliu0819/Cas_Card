@@ -31,7 +31,7 @@ smtp_subject = '测试报告'
 
 receive = '1150714303@qq.com'
 body = '邮件为测试报告'
-is_send_report = True  # 是否发送邮件
+is_send_report = False  # 是否发送邮件
 
 
 # if __name__ == "__main__":
