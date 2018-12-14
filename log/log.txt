@@ -1,0 +1,1737 @@
+2018-12-06 15:20:42 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-06 15:20:43 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-06 15:20:43 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-06 15:20:43 INFO case_log_info [caselog.py-6] 请求用例：test_add_card_exist
+2018-12-06 15:20:43 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-06 15:20:43 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "00A",
+            "CardInfo": {
+                "cardNumber": "9861332111"
+            }
+        }
+2018-12-06 15:20:43 INFO case_log_info [caselog.py-9] 期望结果：{"code":5000,"msg":"该卡已添加","success":false}
+2018-12-06 15:20:43 INFO case_log_info [caselog.py-10] 实际结果：{"code":200,"msg":"添加卡成功","success":false}
+2018-12-06 15:20:43 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-06 15:20:43 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-06 15:20:43 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-06 15:20:43 INFO case_log_info [caselog.py-6] 请求用例：test_add_methodId_invalid
+2018-12-06 15:20:43 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-06 15:20:43 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "00A1",
+            "CardInfo": {
+                "cardNumber": "98613321"
+            }
+        }
+2018-12-06 15:20:43 INFO case_log_info [caselog.py-9] 期望结果：{"code":199,"msg":"业务ID无效","success":false}
+2018-12-06 15:20:43 INFO case_log_info [caselog.py-10] 实际结果：{"code":199,"msg":"业务ID无效","success":false}
+2018-12-06 15:20:43 INFO db_change [db.py-27] delete from cardinfo where cardNumber='98613325'
+2018-12-06 15:20:43 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-06 15:20:43 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-06 15:20:43 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-06 15:20:43 INFO case_log_info [caselog.py-6] 请求用例：test_add_normal
+2018-12-06 15:20:43 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-06 15:20:43 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "00A",
+            "CardInfo": {
+            "cardNumber": "98613325"
+        }
+}
+2018-12-06 15:20:43 INFO case_log_info [caselog.py-9] 期望结果：{"code":200,"msg":"添加卡成功","success":false}
+2018-12-06 15:20:43 INFO case_log_info [caselog.py-10] 实际结果：{"code":200,"msg":"添加卡成功","success":false}
+2018-12-06 15:20:43 INFO db_change [db.py-27] delete from cardinfo where cardNumber='98613325'
+2018-12-06 15:20:44 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-06 15:20:44 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-06 15:20:44 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-06 15:20:44 INFO case_log_info [caselog.py-6] 请求用例：test_bind_card_noexist
+2018-12-06 15:20:44 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-06 15:20:44 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "01A",
+            "CardUser": {
+                "userName": "wangwu",
+                "idType": "1",
+                "idNumber": "35467890564"
+            },
+            "CardInfo": {
+                "cardNumber": "986133222555111"
+            }
+}
+2018-12-06 15:20:44 INFO case_log_info [caselog.py-9] 期望结果：{"code":5013,"msg":"加油卡号不存在","success":false}
+2018-12-06 15:20:44 INFO case_log_info [caselog.py-10] 实际结果：{"code":5013,"msg":"加油卡号不存在","success":false}
+2018-12-06 15:20:44 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-06 15:20:44 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-06 15:20:44 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-06 15:20:44 INFO case_log_info [caselog.py-6] 请求用例：test_bind_cardnum_null
+2018-12-06 15:20:44 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-06 15:20:44 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "01A",
+            "CardUser": {
+                "userName": "wangwu",
+                "idType": "1",
+                "idNumber": "3546789-0564"
+            },
+            "CardInfo": {
+                "cardNumber": ""
+            }
+}
+2018-12-06 15:20:44 INFO case_log_info [caselog.py-9] 期望结果：{"code":301,"msg":"卡号不能为空!","success":false}
+2018-12-06 15:20:44 INFO case_log_info [caselog.py-10] 实际结果：{"code":301,"msg":"卡号不能为空!","success":false}
+2018-12-06 15:20:44 INFO db_query [db.py-16] select userId from cardinfo where cardNumber='986133222'
+2018-12-06 15:20:44 INFO db_change [db.py-27] update cardinfo set cardstatus=null, userId=null where cardNumber='986133222'
+2018-12-06 15:20:45 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-06 15:20:45 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-06 15:20:45 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-06 15:20:45 INFO case_log_info [caselog.py-6] 请求用例：test_bind_success
+2018-12-06 15:20:45 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-06 15:20:45 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "01A",
+            "CardUser": {
+                "userName": "wangwu",
+                "idType": "1",
+                "idNumber": "3546789-0564"
+            },
+            "CardInfo": {
+                "cardNumber": "986133222"
+            }
+}
+2018-12-06 15:20:45 INFO case_log_info [caselog.py-9] 期望结果：{"code":5010,"msg":"绑定成功","result":{"UserId":8559},"success":true}
+2018-12-06 15:20:45 INFO case_log_info [caselog.py-10] 实际结果：{"code":5010,"msg":"绑定成功","result":{"UserId":8559},"success":true}
+2018-12-06 15:20:45 INFO db_change [db.py-27] update cardinfo set cardstatus=null, userId=null where cardNumber='986133222'
+2018-12-06 15:20:45 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-06 15:20:45 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-06 15:20:45 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-06 15:20:45 INFO case_log_info [caselog.py-6] 请求用例：test_bind_two
+2018-12-06 15:20:45 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-06 15:20:45 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "01A",
+            "CardUser": {
+                "userName": "wangwu",
+                "idType": "1",
+                "idNumber": "35467890564"
+            },
+            "CardInfo": {
+                "cardNumber": "98653232333"
+            }
+}
+2018-12-06 15:20:45 INFO case_log_info [caselog.py-9] 期望结果：{"code":5014,"msg":"每个用户只能绑定两张卡","success":false}
+2018-12-06 15:20:45 INFO case_log_info [caselog.py-10] 实际结果：{"code":5014,"msg":"每个用户只能绑定两张卡","success":false}
+2018-12-06 15:20:45 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-06 15:20:45 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "GET /gasStation/process?dataSourceId=bHRz&userId=8637&cardNumber=986532355521&methodId=02A HTTP/1.1" 200 None
+2018-12-06 15:20:45 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-06 15:20:45 INFO case_log_info [caselog.py-6] 请求用例：test_query_nomessage
+2018-12-06 15:20:45 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-06 15:20:45 INFO case_log_info [caselog.py-8] 请求数据：{
+       "dataSourceId": "bHRz",
+       "userId": "8637",
+       "cardNumber": "986532355521",
+       "methodId": "02A"
+}
+2018-12-06 15:20:45 INFO case_log_info [caselog.py-9] 期望结果：{"code":400,"msg":"无查询信息","success":false}
+2018-12-06 15:20:45 INFO case_log_info [caselog.py-10] 实际结果：{"code":400,"msg":"无查询信息","success":false}
+2018-12-06 15:20:45 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-06 15:20:45 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "GET /gasStation/process?dataSourceId=bHRz&userId=8681&cardNumber=986532323&methodId=02A HTTP/1.1" 200 None
+2018-12-06 15:20:45 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-06 15:20:45 INFO case_log_info [caselog.py-6] 请求用例：test_bind_success
+2018-12-06 15:20:45 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-06 15:20:45 INFO case_log_info [caselog.py-8] 请求数据：{
+       "dataSourceId": "bHRz",
+       "userId": "8681",
+       "cardNumber": "986532323",
+       "methodId": "02A"
+}
+2018-12-06 15:20:45 INFO case_log_info [caselog.py-9] 期望结果：{"code":200,"msg":"成功返回","result":{"cardBalance":"991","cardNumber":"986532323","cardStatus":"已经被绑定,正常使用中","consumptionDetails":["消费金额:1,时间:2018-12-06 10:30:38","消费金额:1,时间:2018-12-05 20:12:13","消费金额:1,时间:2018-12-05 17:35:59"],"rechargeDetails":[]},"success":true}
+2018-12-06 15:20:45 INFO case_log_info [caselog.py-10] 实际结果：{"code":200,"msg":"成功返回","result":{"cardBalance":"988","cardNumber":"986532323","cardStatus":"已经被绑定,正常使用中","consumptionDetails":["消费金额:1,时间:2018-12-06 15:18:49","消费金额:1,时间:2018-12-06 15:04:02","消费金额:1,时间:2018-12-06 15:03:26"],"rechargeDetails":[]},"success":true}
+2018-12-06 15:20:45 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-06 15:20:46 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-06 15:20:46 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-06 15:20:46 INFO case_log_info [caselog.py-6] 请求用例：test_recharge_cardnum_no
+2018-12-06 15:20:46 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-06 15:20:46 INFO case_log_info [caselog.py-8] 请求数据：{
+       "dataSourceId": "bHRz",
+       "methodId": "03A",
+       "CardInfo": {
+            "cardNumber": "9865323211111",
+            "cardBalance": "50"
+       }
+}
+2018-12-06 15:20:46 INFO case_log_info [caselog.py-9] 期望结果：{"code":5013,"msg":"加油卡号不存在","success":false}
+2018-12-06 15:20:46 INFO case_log_info [caselog.py-10] 实际结果：{"code":5013,"msg":"加油卡号不存在","success":false}
+2018-12-06 15:20:46 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-06 15:20:46 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-06 15:20:46 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-06 15:20:46 INFO case_log_info [caselog.py-6] 请求用例：test_recharge_money_null
+2018-12-06 15:20:46 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-06 15:20:46 INFO case_log_info [caselog.py-8] 请求数据：{
+      "dataSourceId": "bHRz",
+      "methodId": "03A",
+      "CardInfo": {
+            "cardNumber": "98653232",
+            "cardBalance": ""
+       }
+}
+2018-12-06 15:20:46 INFO case_log_info [caselog.py-9] 期望结果：{"code":300,"msg":"金额不能为空","success":false}
+2018-12-06 15:20:46 INFO case_log_info [caselog.py-10] 实际结果：{"code":300,"msg":"金额不能为空","success":false}
+2018-12-06 15:20:46 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-06 15:20:46 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-06 15:20:46 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-06 15:20:46 INFO case_log_info [caselog.py-6] 请求用例：test_recharge_normal
+2018-12-06 15:20:46 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-06 15:20:46 INFO case_log_info [caselog.py-8] 请求数据：{
+      "dataSourceId": "bHRz",
+      "methodId": "03A",
+      "CardInfo": {
+          "cardNumber": "98653232",
+          "cardBalance": "50"
+      }
+}
+2018-12-06 15:20:46 INFO case_log_info [caselog.py-9] 期望结果：{"code":200,"msg":"充值成功","result":{"cardBalance":"300","cardNumber":"98653232","cardStatus":0,"id":742319836,"userId":0},"success":true}
+2018-12-06 15:20:46 INFO case_log_info [caselog.py-10] 实际结果：{"code":200,"msg":"充值成功","result":{"cardBalance":"950","cardNumber":"98653232","cardStatus":0,"id":742319836,"userId":0},"success":true}
+2018-12-06 15:20:46 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-06 15:20:46 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-06 15:20:46 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-06 15:20:46 INFO case_log_info [caselog.py-6] 请求用例：test_spend_money_noenough
+2018-12-06 15:20:46 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-06 15:20:46 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "04A",
+            "CardUser": {
+                "userId":8681
+            },
+            "CardInfo": {
+                "cardNumber": "9861332221",
+                "cardBalance": "50"
+            }
+}
+2018-12-06 15:20:46 INFO case_log_info [caselog.py-9] 期望结果：{"code":200,"msg":"对不起，您的余额不足，请充值!","success":false}
+2018-12-06 15:20:46 INFO case_log_info [caselog.py-10] 实际结果：{"code":200,"msg":"对不起，您的余额不足，请充值!","success":false}
+2018-12-06 15:20:46 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-06 15:20:46 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-06 15:20:46 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-06 15:20:46 INFO case_log_info [caselog.py-6] 请求用例：test_spend_money_null
+2018-12-06 15:20:46 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-06 15:20:46 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "04A",
+            "CardUser": {
+                "userId":8637
+            },
+            "CardInfo": {
+                "cardNumber": "98653232",
+                "cardBalance": ""
+            }
+}
+2018-12-06 15:20:46 INFO case_log_info [caselog.py-9] 期望结果：{"code":300,"msg":"消费金额不能为空","success":false}
+2018-12-06 15:20:46 INFO case_log_info [caselog.py-10] 实际结果：{"code":300,"msg":"消费金额不能为空","success":false}
+2018-12-06 15:20:46 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-06 15:20:46 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-06 15:20:46 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-06 15:20:46 INFO case_log_info [caselog.py-6] 请求用例：test_spend_normal
+2018-12-06 15:20:46 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-06 15:20:46 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "04A",
+            "CardUser": {
+                "userId":8681
+            },
+            "CardInfo": {
+                "cardNumber": "986532323",
+                "cardBalance": "1"
+            }
+        }
+2018-12-06 15:20:46 INFO case_log_info [caselog.py-9] 期望结果：{"code":200,"msg":"消费成功!","success":true}
+2018-12-06 15:20:46 INFO case_log_info [caselog.py-10] 实际结果：{"code":200,"msg":"消费成功!","success":true}
+2018-12-06 15:45:29 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-06 15:45:29 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-06 15:45:29 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-06 15:45:29 INFO case_log_info [caselog.py-6] 请求用例：test_add_card_exist
+2018-12-06 15:45:29 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-06 15:45:29 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "00A",
+            "CardInfo": {
+                "cardNumber": "98613321"
+            }
+        }
+2018-12-06 15:45:29 INFO case_log_info [caselog.py-9] 期望结果：{"code":5000,"msg":"该卡已添加","success":false}
+2018-12-06 15:45:29 INFO case_log_info [caselog.py-10] 实际结果：{"code":5000,"msg":"该卡已添加","success":false}
+2018-12-06 15:45:29 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-06 15:45:29 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-06 15:45:29 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-06 15:45:29 INFO case_log_info [caselog.py-6] 请求用例：test_add_methodId_invalid
+2018-12-06 15:45:29 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-06 15:45:29 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "00A1",
+            "CardInfo": {
+                "cardNumber": "98613321"
+            }
+        }
+2018-12-06 15:45:29 INFO case_log_info [caselog.py-9] 期望结果：{"code":199,"msg":"业务ID无效","success":false}
+2018-12-06 15:45:29 INFO case_log_info [caselog.py-10] 实际结果：{"code":199,"msg":"业务ID无效","success":false}
+2018-12-06 15:45:29 INFO db_change [db.py-27] delete from cardinfo where cardNumber='98613325'
+2018-12-06 15:45:29 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-06 15:45:30 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-06 15:45:30 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-06 15:45:30 INFO case_log_info [caselog.py-6] 请求用例：test_add_normal
+2018-12-06 15:45:30 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-06 15:45:30 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "00A",
+            "CardInfo": {
+            "cardNumber": "98613325"
+        }
+}
+2018-12-06 15:45:30 INFO case_log_info [caselog.py-9] 期望结果：{"code":200,"msg":"添加卡成功","success":false}
+2018-12-06 15:45:30 INFO case_log_info [caselog.py-10] 实际结果：{"code":200,"msg":"添加卡成功","success":false}
+2018-12-06 15:45:30 INFO db_change [db.py-27] delete from cardinfo where cardNumber='98613325'
+2018-12-06 15:45:30 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-06 15:45:30 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-06 15:45:30 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-06 15:45:30 INFO case_log_info [caselog.py-6] 请求用例：test_bind_card_noexist
+2018-12-06 15:45:30 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-06 15:45:30 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "01A",
+            "CardUser": {
+                "userName": "wangwu",
+                "idType": "1",
+                "idNumber": "35467890564"
+            },
+            "CardInfo": {
+                "cardNumber": "986133222555111"
+            }
+}
+2018-12-06 15:45:30 INFO case_log_info [caselog.py-9] 期望结果：{"code":5013,"msg":"加油卡号不存在","success":false}
+2018-12-06 15:45:30 INFO case_log_info [caselog.py-10] 实际结果：{"code":5013,"msg":"加油卡号不存在","success":false}
+2018-12-06 15:45:30 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-06 15:45:31 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-06 15:45:31 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-06 15:45:31 INFO case_log_info [caselog.py-6] 请求用例：test_bind_cardnum_null
+2018-12-06 15:45:31 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-06 15:45:31 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "01A",
+            "CardUser": {
+                "userName": "wangwu",
+                "idType": "1",
+                "idNumber": "3546789-0564"
+            },
+            "CardInfo": {
+                "cardNumber": ""
+            }
+}
+2018-12-06 15:45:31 INFO case_log_info [caselog.py-9] 期望结果：{"code":301,"msg":"卡号不能为空!","success":false}
+2018-12-06 15:45:31 INFO case_log_info [caselog.py-10] 实际结果：{"code":301,"msg":"卡号不能为空!","success":false}
+2018-12-06 15:45:31 INFO db_query [db.py-16] select userId from cardinfo where cardNumber='986133222'
+2018-12-06 15:45:32 INFO db_change [db.py-27] update cardinfo set cardstatus=null, userId=null where cardNumber='986133222'
+2018-12-06 15:45:32 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-06 15:45:32 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-06 15:45:32 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-06 15:45:32 INFO case_log_info [caselog.py-6] 请求用例：test_bind_success
+2018-12-06 15:45:32 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-06 15:45:32 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "01A",
+            "CardUser": {
+                "userName": "wangwu",
+                "idType": "1",
+                "idNumber": "3546789-0564"
+            },
+            "CardInfo": {
+                "cardNumber": "986133222"
+            }
+}
+2018-12-06 15:45:32 INFO case_log_info [caselog.py-9] 期望结果：{"code":5010,"msg":"绑定成功","result":{"UserId":8559},"success":true}
+2018-12-06 15:45:32 INFO case_log_info [caselog.py-10] 实际结果：{"code":5010,"msg":"绑定成功","result":{"UserId":8559},"success":true}
+2018-12-06 15:45:32 INFO db_change [db.py-27] update cardinfo set cardstatus=null, userId=null where cardNumber='986133222'
+2018-12-06 15:45:33 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-06 15:45:33 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-06 15:45:33 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-06 15:45:33 INFO case_log_info [caselog.py-6] 请求用例：test_bind_two
+2018-12-06 15:45:33 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-06 15:45:33 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "01A",
+            "CardUser": {
+                "userName": "wangwu",
+                "idType": "1",
+                "idNumber": "35467890564"
+            },
+            "CardInfo": {
+                "cardNumber": "98653232333"
+            }
+}
+2018-12-06 15:45:33 INFO case_log_info [caselog.py-9] 期望结果：{"code":5014,"msg":"每个用户只能绑定两张卡","success":false}
+2018-12-06 15:45:33 INFO case_log_info [caselog.py-10] 实际结果：{"code":5014,"msg":"每个用户只能绑定两张卡","success":false}
+2018-12-06 15:45:33 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-06 15:45:33 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "GET /gasStation/process?dataSourceId=bHRz&userId=8637&cardNumber=986532355521&methodId=02A HTTP/1.1" 200 None
+2018-12-06 15:45:33 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-06 15:45:33 INFO case_log_info [caselog.py-6] 请求用例：test_query_nomessage
+2018-12-06 15:45:33 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-06 15:45:33 INFO case_log_info [caselog.py-8] 请求数据：{
+       "dataSourceId": "bHRz",
+       "userId": "8637",
+       "cardNumber": "986532355521",
+       "methodId": "02A"
+}
+2018-12-06 15:45:33 INFO case_log_info [caselog.py-9] 期望结果：{"code":400,"msg":"无查询信息","success":false}
+2018-12-06 15:45:33 INFO case_log_info [caselog.py-10] 实际结果：{"code":400,"msg":"无查询信息","success":false}
+2018-12-06 15:45:33 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-06 15:45:33 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "GET /gasStation/process?dataSourceId=bHRz&userId=8681&cardNumber=986532323&methodId=02A HTTP/1.1" 200 None
+2018-12-06 15:45:33 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-06 15:45:33 INFO case_log_info [caselog.py-6] 请求用例：test_bind_success
+2018-12-06 15:45:33 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-06 15:45:33 INFO case_log_info [caselog.py-8] 请求数据：{
+       "dataSourceId": "bHRz",
+       "userId": "8681",
+       "cardNumber": "986532323",
+       "methodId": "02A"
+}
+2018-12-06 15:45:33 INFO case_log_info [caselog.py-9] 期望结果：{"code":200,"msg":"成功返回","result":{"cardBalance":"991","cardNumber":"986532323","cardStatus":"已经被绑定,正常使用中","consumptionDetails":["消费金额:1,时间:2018-12-06 10:30:38","消费金额:1,时间:2018-12-05 20:12:13","消费金额:1,时间:2018-12-05 17:35:59"],"rechargeDetails":[]},"success":true}
+2018-12-06 15:45:33 INFO case_log_info [caselog.py-10] 实际结果：{"code":200,"msg":"成功返回","result":{"cardBalance":"987","cardNumber":"986532323","cardStatus":"已经被绑定,正常使用中","consumptionDetails":["消费金额:1,时间:2018-12-06 15:21:47","消费金额:1,时间:2018-12-06 15:18:49","消费金额:1,时间:2018-12-06 15:04:02"],"rechargeDetails":[]},"success":true}
+2018-12-06 15:45:33 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-06 15:45:33 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-06 15:45:33 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-06 15:45:33 INFO case_log_info [caselog.py-6] 请求用例：test_recharge_cardnum_no
+2018-12-06 15:45:33 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-06 15:45:33 INFO case_log_info [caselog.py-8] 请求数据：{
+       "dataSourceId": "bHRz",
+       "methodId": "03A",
+       "CardInfo": {
+            "cardNumber": "9865323211111",
+            "cardBalance": "50"
+       }
+}
+2018-12-06 15:45:33 INFO case_log_info [caselog.py-9] 期望结果：{"code":5013,"msg":"加油卡号不存在","success":false}
+2018-12-06 15:45:33 INFO case_log_info [caselog.py-10] 实际结果：{"code":5013,"msg":"加油卡号不存在","success":false}
+2018-12-06 15:45:33 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-06 15:45:33 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-06 15:45:33 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-06 15:45:33 INFO case_log_info [caselog.py-6] 请求用例：test_recharge_money_null
+2018-12-06 15:45:33 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-06 15:45:33 INFO case_log_info [caselog.py-8] 请求数据：{
+      "dataSourceId": "bHRz",
+      "methodId": "03A",
+      "CardInfo": {
+            "cardNumber": "98653232",
+            "cardBalance": ""
+       }
+}
+2018-12-06 15:45:33 INFO case_log_info [caselog.py-9] 期望结果：{"code":300,"msg":"金额不能为空","success":false}
+2018-12-06 15:45:33 INFO case_log_info [caselog.py-10] 实际结果：{"code":300,"msg":"金额不能为空","success":false}
+2018-12-06 15:45:33 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-06 15:45:34 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-06 15:45:34 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-06 15:45:34 INFO case_log_info [caselog.py-6] 请求用例：test_recharge_normal
+2018-12-06 15:45:34 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-06 15:45:34 INFO case_log_info [caselog.py-8] 请求数据：{
+      "dataSourceId": "bHRz",
+      "methodId": "03A",
+      "CardInfo": {
+          "cardNumber": "98653232",
+          "cardBalance": "50"
+      }
+}
+2018-12-06 15:45:34 INFO case_log_info [caselog.py-9] 期望结果：{"code":200,"msg":"充值成功","result":{"cardBalance":"300","cardNumber":"98653232","cardStatus":0,"id":742319836,"userId":0},"success":true}
+2018-12-06 15:45:34 INFO case_log_info [caselog.py-10] 实际结果：{"code":200,"msg":"充值成功","result":{"cardBalance":"1000","cardNumber":"98653232","cardStatus":0,"id":742319836,"userId":0},"success":true}
+2018-12-06 15:45:34 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-06 15:45:34 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-06 15:45:34 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-06 15:45:34 INFO case_log_info [caselog.py-6] 请求用例：test_spend_money_noenough
+2018-12-06 15:45:34 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-06 15:45:34 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "04A",
+            "CardUser": {
+                "userId":8681
+            },
+            "CardInfo": {
+                "cardNumber": "9861332221",
+                "cardBalance": "50"
+            }
+}
+2018-12-06 15:45:34 INFO case_log_info [caselog.py-9] 期望结果：{"code":200,"msg":"对不起，您的余额不足，请充值!","success":false}
+2018-12-06 15:45:34 INFO case_log_info [caselog.py-10] 实际结果：{"code":200,"msg":"对不起，您的余额不足，请充值!","success":false}
+2018-12-06 15:45:34 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-06 15:45:34 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-06 15:45:34 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-06 15:45:34 INFO case_log_info [caselog.py-6] 请求用例：test_spend_money_null
+2018-12-06 15:45:34 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-06 15:45:34 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "04A",
+            "CardUser": {
+                "userId":8637
+            },
+            "CardInfo": {
+                "cardNumber": "98653232",
+                "cardBalance": ""
+            }
+}
+2018-12-06 15:45:34 INFO case_log_info [caselog.py-9] 期望结果：{"code":300,"msg":"消费金额不能为空","success":false}
+2018-12-06 15:45:34 INFO case_log_info [caselog.py-10] 实际结果：{"code":300,"msg":"消费金额不能为空","success":false}
+2018-12-06 15:45:34 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-06 15:45:34 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-06 15:45:34 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-06 15:45:34 INFO case_log_info [caselog.py-6] 请求用例：test_spend_normal
+2018-12-06 15:45:34 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-06 15:45:34 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "04A",
+            "CardUser": {
+                "userId":8681
+            },
+            "CardInfo": {
+                "cardNumber": "986532323",
+                "cardBalance": "1"
+            }
+        }
+2018-12-06 15:45:34 INFO case_log_info [caselog.py-9] 期望结果：{"code":200,"msg":"消费成功!","success":true}
+2018-12-06 15:45:34 INFO case_log_info [caselog.py-10] 实际结果：{"code":200,"msg":"消费成功!","success":true}
+2018-12-12 15:54:29 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-12 15:54:29 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-12 15:54:29 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-12 15:54:29 INFO case_log_info [caselog.py-6] 请求用例：test_add_card_exist
+2018-12-12 15:54:29 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-12 15:54:29 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "00A",
+            "CardInfo": {
+                "cardNumber": "98613321"
+            }
+        }
+2018-12-12 15:54:29 INFO case_log_info [caselog.py-9] 期望结果：{"code":5000,"msg":"该卡已添加","success":false}
+2018-12-12 15:54:29 INFO case_log_info [caselog.py-10] 实际结果：{"code":5000,"msg":"该卡已添加","success":false}
+2018-12-12 15:54:29 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-12 15:54:29 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-12 15:54:29 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-12 15:54:29 INFO case_log_info [caselog.py-6] 请求用例：test_add_methodId_invalid
+2018-12-12 15:54:29 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-12 15:54:29 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "00A1",
+            "CardInfo": {
+                "cardNumber": "98613321"
+            }
+        }
+2018-12-12 15:54:29 INFO case_log_info [caselog.py-9] 期望结果：{"code":199,"msg":"业务ID无效","success":false}
+2018-12-12 15:54:29 INFO case_log_info [caselog.py-10] 实际结果：{"code":199,"msg":"业务ID无效","success":false}
+2018-12-12 15:54:29 INFO db_change [db.py-27] delete from cardinfo where cardNumber='98613325'
+2018-12-12 15:54:29 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-12 15:54:29 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-12 15:54:29 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-12 15:54:29 INFO case_log_info [caselog.py-6] 请求用例：test_add_normal
+2018-12-12 15:54:29 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-12 15:54:29 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "00A",
+            "CardInfo": {
+            "cardNumber": "98613325"
+        }
+}
+2018-12-12 15:54:29 INFO case_log_info [caselog.py-9] 期望结果：{"code":200,"msg":"添加卡成功","success":false}
+2018-12-12 15:54:29 INFO case_log_info [caselog.py-10] 实际结果：{"code":200,"msg":"添加卡成功","success":false}
+2018-12-12 15:54:29 INFO db_change [db.py-27] delete from cardinfo where cardNumber='98613325'
+2018-12-12 15:54:30 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-12 15:54:30 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-12 15:54:30 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-12 15:54:30 INFO case_log_info [caselog.py-6] 请求用例：test_bind_card_noexist
+2018-12-12 15:54:30 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-12 15:54:30 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "01A",
+            "CardUser": {
+                "userName": "wangwu",
+                "idType": "1",
+                "idNumber": "35467890564"
+            },
+            "CardInfo": {
+                "cardNumber": "986133222555111"
+            }
+}
+2018-12-12 15:54:30 INFO case_log_info [caselog.py-9] 期望结果：{"code":5013,"msg":"加油卡号不存在","success":false}
+2018-12-12 15:54:30 INFO case_log_info [caselog.py-10] 实际结果：{"code":5013,"msg":"加油卡号不存在","success":false}
+2018-12-12 15:54:30 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-12 15:54:30 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-12 15:54:30 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-12 15:54:30 INFO case_log_info [caselog.py-6] 请求用例：test_bind_cardnum_null
+2018-12-12 15:54:30 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-12 15:54:30 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "01A",
+            "CardUser": {
+                "userName": "wangwu",
+                "idType": "1",
+                "idNumber": "3546789-0564"
+            },
+            "CardInfo": {
+                "cardNumber": ""
+            }
+}
+2018-12-12 15:54:30 INFO case_log_info [caselog.py-9] 期望结果：{"code":301,"msg":"卡号不能为空!","success":false}
+2018-12-12 15:54:30 INFO case_log_info [caselog.py-10] 实际结果：{"code":301,"msg":"卡号不能为空!","success":false}
+2018-12-12 15:54:30 INFO db_query [db.py-16] select userId from cardinfo where cardNumber='986133222'
+2018-12-12 15:54:31 INFO db_change [db.py-27] update cardinfo set cardstatus=null, userId=null where cardNumber='986133222'
+2018-12-12 15:54:31 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-12 15:54:31 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-12 15:54:31 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-12 15:54:31 INFO case_log_info [caselog.py-6] 请求用例：test_bind_success
+2018-12-12 15:54:31 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-12 15:54:31 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "01A",
+            "CardUser": {
+                "userName": "wangwu",
+                "idType": "1",
+                "idNumber": "3546789-0564"
+            },
+            "CardInfo": {
+                "cardNumber": "986133222"
+            }
+}
+2018-12-12 15:54:31 INFO case_log_info [caselog.py-9] 期望结果：{"code":5010,"msg":"绑定成功","result":{"UserId":8559},"success":true}
+2018-12-12 15:54:31 INFO case_log_info [caselog.py-10] 实际结果：{"code":5010,"msg":"绑定成功","result":{"UserId":8559},"success":true}
+2018-12-12 15:54:31 INFO db_change [db.py-27] update cardinfo set cardstatus=null, userId=null where cardNumber='986133222'
+2018-12-12 15:54:31 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-12 15:54:32 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-6] 请求用例：test_bind_two
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "01A",
+            "CardUser": {
+                "userName": "wangwu",
+                "idType": "1",
+                "idNumber": "35467890564"
+            },
+            "CardInfo": {
+                "cardNumber": "98653232333"
+            }
+}
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-9] 期望结果：{"code":5014,"msg":"每个用户只能绑定两张卡","success":false}
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-10] 实际结果：{"code":5014,"msg":"每个用户只能绑定两张卡","success":false}
+2018-12-12 15:54:32 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-12 15:54:32 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "GET /gasStation/process?dataSourceId=bHRz&userId=8637&cardNumber=986532355521&methodId=02A HTTP/1.1" 200 None
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-6] 请求用例：test_query_nomessage
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-8] 请求数据：{
+       "dataSourceId": "bHRz",
+       "userId": "8637",
+       "cardNumber": "986532355521",
+       "methodId": "02A"
+}
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-9] 期望结果：{"code":400,"msg":"无查询信息","success":false}
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-10] 实际结果：{"code":400,"msg":"无查询信息","success":false}
+2018-12-12 15:54:32 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-12 15:54:32 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "GET /gasStation/process?dataSourceId=bHRz&userId=8681&cardNumber=986532323&methodId=02A HTTP/1.1" 200 None
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-6] 请求用例：test_bind_success
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-8] 请求数据：{
+       "dataSourceId": "bHRz",
+       "userId": "8681",
+       "cardNumber": "986532323",
+       "methodId": "02A"
+}
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-9] 期望结果：{"code":200,"msg":"成功返回","result":{"cardBalance":"991","cardNumber":"986532323","cardStatus":"已经被绑定,正常使用中","consumptionDetails":["消费金额:1,时间:2018-12-06 10:30:38","消费金额:1,时间:2018-12-05 20:12:13","消费金额:1,时间:2018-12-05 17:35:59"],"rechargeDetails":[]},"success":true}
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-10] 实际结果：{"code":200,"msg":"成功返回","result":{"cardBalance":"986","cardNumber":"986532323","cardStatus":"已经被绑定,正常使用中","consumptionDetails":["消费金额:1,时间:2018-12-06 15:46:34","消费金额:1,时间:2018-12-06 15:21:47","消费金额:1,时间:2018-12-06 15:18:49"],"rechargeDetails":[]},"success":true}
+2018-12-12 15:54:32 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-12 15:54:32 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-6] 请求用例：test_recharge_cardnum_no
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-8] 请求数据：{
+       "dataSourceId": "bHRz",
+       "methodId": "03A",
+       "CardInfo": {
+            "cardNumber": "9865323211111",
+            "cardBalance": "50"
+       }
+}
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-9] 期望结果：{"code":5013,"msg":"加油卡号不存在","success":false}
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-10] 实际结果：{"code":5013,"msg":"加油卡号不存在","success":false}
+2018-12-12 15:54:32 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-12 15:54:32 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-6] 请求用例：test_recharge_money_null
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-8] 请求数据：{
+      "dataSourceId": "bHRz",
+      "methodId": "03A",
+      "CardInfo": {
+            "cardNumber": "98653232",
+            "cardBalance": ""
+       }
+}
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-9] 期望结果：{"code":300,"msg":"金额不能为空","success":false}
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-10] 实际结果：{"code":300,"msg":"金额不能为空","success":false}
+2018-12-12 15:54:32 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-12 15:54:32 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-6] 请求用例：test_recharge_normal
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-8] 请求数据：{
+      "dataSourceId": "bHRz",
+      "methodId": "03A",
+      "CardInfo": {
+          "cardNumber": "98653232",
+          "cardBalance": "50"
+      }
+}
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-9] 期望结果：{"code":200,"msg":"充值成功","result":{"cardBalance":"300","cardNumber":"98653232","cardStatus":0,"id":742319836,"userId":0},"success":true}
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-10] 实际结果：{"code":200,"msg":"充值成功","result":{"cardBalance":"1050","cardNumber":"98653232","cardStatus":0,"id":742319836,"userId":0},"success":true}
+2018-12-12 15:54:32 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-12 15:54:32 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-6] 请求用例：test_spend_money_noenough
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "04A",
+            "CardUser": {
+                "userId":8681
+            },
+            "CardInfo": {
+                "cardNumber": "9861332221",
+                "cardBalance": "50"
+            }
+}
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-9] 期望结果：{"code":200,"msg":"对不起，您的余额不足，请充值!","success":false}
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-10] 实际结果：{"code":200,"msg":"对不起，您的余额不足，请充值!","success":false}
+2018-12-12 15:54:32 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-12 15:54:32 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-6] 请求用例：test_spend_money_null
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "04A",
+            "CardUser": {
+                "userId":8637
+            },
+            "CardInfo": {
+                "cardNumber": "98653232",
+                "cardBalance": ""
+            }
+}
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-9] 期望结果：{"code":300,"msg":"消费金额不能为空","success":false}
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-10] 实际结果：{"code":300,"msg":"消费金额不能为空","success":false}
+2018-12-12 15:54:32 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-12 15:54:32 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-6] 请求用例：test_spend_normal
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "04A",
+            "CardUser": {
+                "userId":8681
+            },
+            "CardInfo": {
+                "cardNumber": "986532323",
+                "cardBalance": "1"
+            }
+        }
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-9] 期望结果：{"code":200,"msg":"消费成功!","success":true}
+2018-12-12 15:54:32 INFO case_log_info [caselog.py-10] 实际结果：{"code":200,"msg":"消费成功!","success":true}
+2018-12-12 15:55:16 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-12 15:55:16 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-12 15:55:16 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-12 15:55:16 INFO case_log_info [caselog.py-6] 请求用例：test_add_card_exist
+2018-12-12 15:55:16 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-12 15:55:16 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "00A",
+            "CardInfo": {
+                "cardNumber": "98613321"
+            }
+        }
+2018-12-12 15:55:16 INFO case_log_info [caselog.py-9] 期望结果：{"code":5000,"msg":"该卡已添加","success":false}
+2018-12-12 15:55:16 INFO case_log_info [caselog.py-10] 实际结果：{"code":5000,"msg":"该卡已添加","success":false}
+2018-12-12 15:55:16 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-12 15:55:16 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-12 15:55:16 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-12 15:55:16 INFO case_log_info [caselog.py-6] 请求用例：test_add_methodId_invalid
+2018-12-12 15:55:16 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-12 15:55:16 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "00A1",
+            "CardInfo": {
+                "cardNumber": "98613321"
+            }
+        }
+2018-12-12 15:55:16 INFO case_log_info [caselog.py-9] 期望结果：{"code":199,"msg":"业务ID无效","success":false}
+2018-12-12 15:55:16 INFO case_log_info [caselog.py-10] 实际结果：{"code":199,"msg":"业务ID无效","success":false}
+2018-12-12 15:55:16 INFO db_change [db.py-27] delete from cardinfo where cardNumber='98613325'
+2018-12-12 15:55:17 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-12 15:55:17 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-12 15:55:17 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-12 15:55:17 INFO case_log_info [caselog.py-6] 请求用例：test_add_normal
+2018-12-12 15:55:17 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-12 15:55:17 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "00A",
+            "CardInfo": {
+            "cardNumber": "98613325"
+        }
+}
+2018-12-12 15:55:17 INFO case_log_info [caselog.py-9] 期望结果：{"code":200,"msg":"添加卡成功","success":false}
+2018-12-12 15:55:17 INFO case_log_info [caselog.py-10] 实际结果：{"code":200,"msg":"添加卡成功","success":false}
+2018-12-12 15:55:17 INFO db_change [db.py-27] delete from cardinfo where cardNumber='98613325'
+2018-12-12 15:55:17 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-12 15:55:17 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-12 15:55:17 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-12 15:55:17 INFO case_log_info [caselog.py-6] 请求用例：test_bind_card_noexist
+2018-12-12 15:55:17 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-12 15:55:17 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "01A",
+            "CardUser": {
+                "userName": "wangwu",
+                "idType": "1",
+                "idNumber": "35467890564"
+            },
+            "CardInfo": {
+                "cardNumber": "986133222555111"
+            }
+}
+2018-12-12 15:55:17 INFO case_log_info [caselog.py-9] 期望结果：{"code":5013,"msg":"加油卡号不存在","success":false}
+2018-12-12 15:55:17 INFO case_log_info [caselog.py-10] 实际结果：{"code":5013,"msg":"加油卡号不存在","success":false}
+2018-12-12 15:55:17 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-12 15:55:17 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-12 15:55:17 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-12 15:55:17 INFO case_log_info [caselog.py-6] 请求用例：test_bind_cardnum_null
+2018-12-12 15:55:17 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-12 15:55:17 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "01A",
+            "CardUser": {
+                "userName": "wangwu",
+                "idType": "1",
+                "idNumber": "3546789-0564"
+            },
+            "CardInfo": {
+                "cardNumber": ""
+            }
+}
+2018-12-12 15:55:17 INFO case_log_info [caselog.py-9] 期望结果：{"code":301,"msg":"卡号不能为空!","success":false}
+2018-12-12 15:55:17 INFO case_log_info [caselog.py-10] 实际结果：{"code":301,"msg":"卡号不能为空!","success":false}
+2018-12-12 15:55:17 INFO db_query [db.py-16] select userId from cardinfo where cardNumber='986133222'
+2018-12-12 15:55:18 INFO db_change [db.py-27] update cardinfo set cardstatus=null, userId=null where cardNumber='986133222'
+2018-12-12 15:55:18 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-12 15:55:18 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-12 15:55:18 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-12 15:55:18 INFO case_log_info [caselog.py-6] 请求用例：test_bind_success
+2018-12-12 15:55:18 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-12 15:55:18 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "01A",
+            "CardUser": {
+                "userName": "wangwu",
+                "idType": "1",
+                "idNumber": "3546789-0564"
+            },
+            "CardInfo": {
+                "cardNumber": "986133222"
+            }
+}
+2018-12-12 15:55:18 INFO case_log_info [caselog.py-9] 期望结果：{"code":5010,"msg":"绑定成功","result":{"UserId":8559},"success":true}
+2018-12-12 15:55:18 INFO case_log_info [caselog.py-10] 实际结果：{"code":5010,"msg":"绑定成功","result":{"UserId":8559},"success":true}
+2018-12-12 15:55:18 INFO db_change [db.py-27] update cardinfo set cardstatus=null, userId=null where cardNumber='986133222'
+2018-12-12 15:55:18 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-12 15:55:18 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-12 15:55:18 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-12 15:55:18 INFO case_log_info [caselog.py-6] 请求用例：test_bind_two
+2018-12-12 15:55:18 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-12 15:55:18 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "01A",
+            "CardUser": {
+                "userName": "wangwu",
+                "idType": "1",
+                "idNumber": "35467890564"
+            },
+            "CardInfo": {
+                "cardNumber": "98653232333"
+            }
+}
+2018-12-12 15:55:18 INFO case_log_info [caselog.py-9] 期望结果：{"code":5014,"msg":"每个用户只能绑定两张卡","success":false}
+2018-12-12 15:55:18 INFO case_log_info [caselog.py-10] 实际结果：{"code":5014,"msg":"每个用户只能绑定两张卡","success":false}
+2018-12-12 15:55:18 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-12 15:55:18 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "GET /gasStation/process?dataSourceId=bHRz&userId=8637&cardNumber=986532355521&methodId=02A HTTP/1.1" 200 None
+2018-12-12 15:55:18 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-12 15:55:18 INFO case_log_info [caselog.py-6] 请求用例：test_query_nomessage
+2018-12-12 15:55:18 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-12 15:55:18 INFO case_log_info [caselog.py-8] 请求数据：{
+       "dataSourceId": "bHRz",
+       "userId": "8637",
+       "cardNumber": "986532355521",
+       "methodId": "02A"
+}
+2018-12-12 15:55:18 INFO case_log_info [caselog.py-9] 期望结果：{"code":400,"msg":"无查询信息","success":false}
+2018-12-12 15:55:18 INFO case_log_info [caselog.py-10] 实际结果：{"code":400,"msg":"无查询信息","success":false}
+2018-12-12 15:55:18 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-12 15:55:19 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "GET /gasStation/process?dataSourceId=bHRz&userId=8681&cardNumber=986532323&methodId=02A HTTP/1.1" 200 None
+2018-12-12 15:55:19 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-12 15:55:19 INFO case_log_info [caselog.py-6] 请求用例：test_bind_success
+2018-12-12 15:55:19 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-12 15:55:19 INFO case_log_info [caselog.py-8] 请求数据：{
+       "dataSourceId": "bHRz",
+       "userId": "8681",
+       "cardNumber": "986532323",
+       "methodId": "02A"
+}
+2018-12-12 15:55:19 INFO case_log_info [caselog.py-9] 期望结果：{"code":200,"msg":"成功返回","result":{"cardBalance":"991","cardNumber":"986532323","cardStatus":"已经被绑定,正常使用中","consumptionDetails":["消费金额:1,时间:2018-12-06 10:30:38","消费金额:1,时间:2018-12-05 20:12:13","消费金额:1,时间:2018-12-05 17:35:59"],"rechargeDetails":[]},"success":true}
+2018-12-12 15:55:19 INFO case_log_info [caselog.py-10] 实际结果：{"code":200,"msg":"成功返回","result":{"cardBalance":"985","cardNumber":"986532323","cardStatus":"已经被绑定,正常使用中","consumptionDetails":["消费金额:1,时间:2018-12-12 15:55:47","消费金额:1,时间:2018-12-06 15:46:34","消费金额:1,时间:2018-12-06 15:21:47"],"rechargeDetails":[]},"success":true}
+2018-12-12 15:55:19 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-12 15:55:19 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-12 15:55:19 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-12 15:55:19 INFO case_log_info [caselog.py-6] 请求用例：test_recharge_cardnum_no
+2018-12-12 15:55:19 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-12 15:55:19 INFO case_log_info [caselog.py-8] 请求数据：{
+       "dataSourceId": "bHRz",
+       "methodId": "03A",
+       "CardInfo": {
+            "cardNumber": "9865323211111",
+            "cardBalance": "50"
+       }
+}
+2018-12-12 15:55:19 INFO case_log_info [caselog.py-9] 期望结果：{"code":5013,"msg":"加油卡号不存在","success":false}
+2018-12-12 15:55:19 INFO case_log_info [caselog.py-10] 实际结果：{"code":5013,"msg":"加油卡号不存在","success":false}
+2018-12-12 15:55:19 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-12 15:55:19 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-12 15:55:19 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-12 15:55:19 INFO case_log_info [caselog.py-6] 请求用例：test_recharge_money_null
+2018-12-12 15:55:19 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-12 15:55:19 INFO case_log_info [caselog.py-8] 请求数据：{
+      "dataSourceId": "bHRz",
+      "methodId": "03A",
+      "CardInfo": {
+            "cardNumber": "98653232",
+            "cardBalance": ""
+       }
+}
+2018-12-12 15:55:19 INFO case_log_info [caselog.py-9] 期望结果：{"code":300,"msg":"金额不能为空","success":false}
+2018-12-12 15:55:19 INFO case_log_info [caselog.py-10] 实际结果：{"code":300,"msg":"金额不能为空","success":false}
+2018-12-12 15:55:19 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-12 15:55:19 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-12 15:55:19 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-12 15:55:19 INFO case_log_info [caselog.py-6] 请求用例：test_recharge_normal
+2018-12-12 15:55:19 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-12 15:55:19 INFO case_log_info [caselog.py-8] 请求数据：{
+      "dataSourceId": "bHRz",
+      "methodId": "03A",
+      "CardInfo": {
+          "cardNumber": "98653232",
+          "cardBalance": "50"
+      }
+}
+2018-12-12 15:55:19 INFO case_log_info [caselog.py-9] 期望结果：{"code":200,"msg":"充值成功","result":{"cardBalance":"300","cardNumber":"98653232","cardStatus":0,"id":742319836,"userId":0},"success":true}
+2018-12-12 15:55:19 INFO case_log_info [caselog.py-10] 实际结果：{"code":200,"msg":"充值成功","result":{"cardBalance":"1100","cardNumber":"98653232","cardStatus":0,"id":742319836,"userId":0},"success":true}
+2018-12-12 15:55:19 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-12 15:55:19 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-12 15:55:19 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-12 15:55:19 INFO case_log_info [caselog.py-6] 请求用例：test_spend_money_noenough
+2018-12-12 15:55:19 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-12 15:55:19 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "04A",
+            "CardUser": {
+                "userId":8681
+            },
+            "CardInfo": {
+                "cardNumber": "9861332221",
+                "cardBalance": "50"
+            }
+}
+2018-12-12 15:55:19 INFO case_log_info [caselog.py-9] 期望结果：{"code":200,"msg":"对不起，您的余额不足，请充值!","success":false}
+2018-12-12 15:55:19 INFO case_log_info [caselog.py-10] 实际结果：{"code":200,"msg":"对不起，您的余额不足，请充值!","success":false}
+2018-12-12 15:55:19 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-12 15:55:19 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-12 15:55:19 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-12 15:55:19 INFO case_log_info [caselog.py-6] 请求用例：test_spend_money_null
+2018-12-12 15:55:19 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-12 15:55:19 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "04A",
+            "CardUser": {
+                "userId":8637
+            },
+            "CardInfo": {
+                "cardNumber": "98653232",
+                "cardBalance": ""
+            }
+}
+2018-12-12 15:55:19 INFO case_log_info [caselog.py-9] 期望结果：{"code":300,"msg":"消费金额不能为空","success":false}
+2018-12-12 15:55:19 INFO case_log_info [caselog.py-10] 实际结果：{"code":300,"msg":"消费金额不能为空","success":false}
+2018-12-12 15:55:19 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-12 15:55:19 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-12 15:55:19 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-12 15:55:19 INFO case_log_info [caselog.py-6] 请求用例：test_spend_normal
+2018-12-12 15:55:19 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-12 15:55:19 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "04A",
+            "CardUser": {
+                "userId":8681
+            },
+            "CardInfo": {
+                "cardNumber": "986532323",
+                "cardBalance": "1"
+            }
+        }
+2018-12-12 15:55:19 INFO case_log_info [caselog.py-9] 期望结果：{"code":200,"msg":"消费成功!","success":true}
+2018-12-12 15:55:19 INFO case_log_info [caselog.py-10] 实际结果：{"code":200,"msg":"消费成功!","success":true}
+2018-12-14 10:46:35 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-14 10:46:35 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-14 10:46:35 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-14 10:46:35 INFO case_log_info [caselog.py-6] 请求用例：test_add_card_exist
+2018-12-14 10:46:35 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-14 10:46:35 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "00A",
+            "CardInfo": {
+                "cardNumber": "98613321"
+            }
+        }
+2018-12-14 10:46:35 INFO case_log_info [caselog.py-9] 期望结果：{"code":5000,"msg":"该卡已添加","success":false}
+2018-12-14 10:46:35 INFO case_log_info [caselog.py-10] 实际结果：{"code":5000,"msg":"该卡已添加","success":false}
+2018-12-14 10:46:35 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-14 10:46:35 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-14 10:46:35 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-14 10:46:35 INFO case_log_info [caselog.py-6] 请求用例：test_add_methodId_invalid
+2018-12-14 10:46:35 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-14 10:46:35 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "00A1",
+            "CardInfo": {
+                "cardNumber": "98613321"
+            }
+        }
+2018-12-14 10:46:35 INFO case_log_info [caselog.py-9] 期望结果：{"code":199,"msg":"业务ID无效","success":false}
+2018-12-14 10:46:35 INFO case_log_info [caselog.py-10] 实际结果：{"code":199,"msg":"业务ID无效","success":false}
+2018-12-14 10:46:35 INFO db_change [db.py-27] delete from cardinfo where cardNumber='98613325'
+2018-12-14 10:46:35 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-14 10:46:35 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-14 10:46:35 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-14 10:46:35 INFO case_log_info [caselog.py-6] 请求用例：test_add_normal
+2018-12-14 10:46:35 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-14 10:46:35 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "00A",
+            "CardInfo": {
+            "cardNumber": "98613325"
+        }
+}
+2018-12-14 10:46:35 INFO case_log_info [caselog.py-9] 期望结果：{"code":200,"msg":"添加卡成功","success":false}
+2018-12-14 10:46:35 INFO case_log_info [caselog.py-10] 实际结果：{"code":200,"msg":"添加卡成功","success":false}
+2018-12-14 10:46:35 INFO db_change [db.py-27] delete from cardinfo where cardNumber='98613325'
+2018-12-14 10:46:36 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-14 10:46:36 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-14 10:46:36 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-14 10:46:36 INFO case_log_info [caselog.py-6] 请求用例：test_bind_card_noexist
+2018-12-14 10:46:36 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-14 10:46:36 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "01A",
+            "CardUser": {
+                "userName": "wangwu",
+                "idType": "1",
+                "idNumber": "35467890564"
+            },
+            "CardInfo": {
+                "cardNumber": "986133222555111"
+            }
+}
+2018-12-14 10:46:36 INFO case_log_info [caselog.py-9] 期望结果：{"code":5013,"msg":"加油卡号不存在","success":false}
+2018-12-14 10:46:36 INFO case_log_info [caselog.py-10] 实际结果：{"code":5013,"msg":"加油卡号不存在","success":false}
+2018-12-14 10:46:36 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-14 10:46:36 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-14 10:46:36 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-14 10:46:36 INFO case_log_info [caselog.py-6] 请求用例：test_bind_cardnum_null
+2018-12-14 10:46:36 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-14 10:46:36 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "01A",
+            "CardUser": {
+                "userName": "wangwu",
+                "idType": "1",
+                "idNumber": "3546789-0564"
+            },
+            "CardInfo": {
+                "cardNumber": ""
+            }
+}
+2018-12-14 10:46:36 INFO case_log_info [caselog.py-9] 期望结果：{"code":301,"msg":"卡号不能为空!","success":false}
+2018-12-14 10:46:36 INFO case_log_info [caselog.py-10] 实际结果：{"code":301,"msg":"卡号不能为空!","success":false}
+2018-12-14 10:46:36 INFO db_query [db.py-16] select userId from cardinfo where cardNumber='986133222'
+2018-12-14 10:46:36 INFO db_change [db.py-27] update cardinfo set cardstatus=null, userId=null where cardNumber='986133222'
+2018-12-14 10:46:36 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-14 10:46:36 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-14 10:46:36 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-14 10:46:36 INFO case_log_info [caselog.py-6] 请求用例：test_bind_success
+2018-12-14 10:46:36 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-14 10:46:36 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "01A",
+            "CardUser": {
+                "userName": "wangwu",
+                "idType": "1",
+                "idNumber": "3546789-0564"
+            },
+            "CardInfo": {
+                "cardNumber": "986133222"
+            }
+}
+2018-12-14 10:46:36 INFO case_log_info [caselog.py-9] 期望结果：{"code":5010,"msg":"绑定成功","result":{"UserId":8559},"success":true}
+2018-12-14 10:46:36 INFO case_log_info [caselog.py-10] 实际结果：{"code":5010,"msg":"绑定成功","result":{"UserId":8559},"success":true}
+2018-12-14 10:46:36 INFO db_change [db.py-27] update cardinfo set cardstatus=null, userId=null where cardNumber='986133222'
+2018-12-14 10:46:37 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-14 10:46:37 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-14 10:46:37 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-14 10:46:37 INFO case_log_info [caselog.py-6] 请求用例：test_bind_two
+2018-12-14 10:46:37 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-14 10:46:37 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "01A",
+            "CardUser": {
+                "userName": "wangwu",
+                "idType": "1",
+                "idNumber": "35467890564"
+            },
+            "CardInfo": {
+                "cardNumber": "98653232333"
+            }
+}
+2018-12-14 10:46:37 INFO case_log_info [caselog.py-9] 期望结果：{"code":5014,"msg":"每个用户只能绑定两张卡","success":false}
+2018-12-14 10:46:37 INFO case_log_info [caselog.py-10] 实际结果：{"code":5014,"msg":"每个用户只能绑定两张卡","success":false}
+2018-12-14 10:46:37 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-14 10:46:37 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "GET /gasStation/process?dataSourceId=bHRz&userId=8637&cardNumber=986532355521&methodId=02A HTTP/1.1" 200 None
+2018-12-14 10:46:37 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-14 10:46:37 INFO case_log_info [caselog.py-6] 请求用例：test_query_nomessage
+2018-12-14 10:46:37 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-14 10:46:37 INFO case_log_info [caselog.py-8] 请求数据：{
+       "dataSourceId": "bHRz",
+       "userId": "8637",
+       "cardNumber": "986532355521",
+       "methodId": "02A"
+}
+2018-12-14 10:46:37 INFO case_log_info [caselog.py-9] 期望结果：{"code":400,"msg":"无查询信息","success":false}
+2018-12-14 10:46:37 INFO case_log_info [caselog.py-10] 实际结果：{"code":400,"msg":"无查询信息","success":false}
+2018-12-14 10:46:37 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-14 10:46:37 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "GET /gasStation/process?dataSourceId=bHRz&userId=8681&cardNumber=986532323&methodId=02A HTTP/1.1" 200 None
+2018-12-14 10:46:37 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-14 10:46:37 INFO case_log_info [caselog.py-6] 请求用例：test_bind_success
+2018-12-14 10:46:37 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-14 10:46:37 INFO case_log_info [caselog.py-8] 请求数据：{
+       "dataSourceId": "bHRz",
+       "userId": "8681",
+       "cardNumber": "986532323",
+       "methodId": "02A"
+}
+2018-12-14 10:46:37 INFO case_log_info [caselog.py-9] 期望结果：{"code":200,"msg":"成功返回","result":{"cardBalance":"991","cardNumber":"986532323","cardStatus":"已经被绑定,正常使用中","consumptionDetails":["消费金额:1,时间:2018-12-06 10:30:38","消费金额:1,时间:2018-12-05 20:12:13","消费金额:1,时间:2018-12-05 17:35:59"],"rechargeDetails":[]},"success":true}
+2018-12-14 10:46:37 INFO case_log_info [caselog.py-10] 实际结果：{"code":200,"msg":"成功返回","result":{"cardBalance":"984","cardNumber":"986532323","cardStatus":"已经被绑定,正常使用中","consumptionDetails":["消费金额:1,时间:2018-12-12 15:56:34","消费金额:1,时间:2018-12-12 15:55:47","消费金额:1,时间:2018-12-06 15:46:34"],"rechargeDetails":[]},"success":true}
+2018-12-14 10:46:37 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-14 10:46:37 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-14 10:46:37 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-14 10:46:37 INFO case_log_info [caselog.py-6] 请求用例：test_recharge_cardnum_no
+2018-12-14 10:46:37 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-14 10:46:37 INFO case_log_info [caselog.py-8] 请求数据：{
+       "dataSourceId": "bHRz",
+       "methodId": "03A",
+       "CardInfo": {
+            "cardNumber": "9865323211111",
+            "cardBalance": "50"
+       }
+}
+2018-12-14 10:46:37 INFO case_log_info [caselog.py-9] 期望结果：{"code":5013,"msg":"加油卡号不存在","success":false}
+2018-12-14 10:46:37 INFO case_log_info [caselog.py-10] 实际结果：{"code":5013,"msg":"加油卡号不存在","success":false}
+2018-12-14 10:46:37 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-14 10:46:37 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-14 10:46:37 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-14 10:46:37 INFO case_log_info [caselog.py-6] 请求用例：test_recharge_money_null
+2018-12-14 10:46:37 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-14 10:46:37 INFO case_log_info [caselog.py-8] 请求数据：{
+      "dataSourceId": "bHRz",
+      "methodId": "03A",
+      "CardInfo": {
+            "cardNumber": "98653232",
+            "cardBalance": ""
+       }
+}
+2018-12-14 10:46:37 INFO case_log_info [caselog.py-9] 期望结果：{"code":300,"msg":"金额不能为空","success":false}
+2018-12-14 10:46:37 INFO case_log_info [caselog.py-10] 实际结果：{"code":300,"msg":"金额不能为空","success":false}
+2018-12-14 10:46:37 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-14 10:46:37 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-14 10:46:37 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-14 10:46:37 INFO case_log_info [caselog.py-6] 请求用例：test_recharge_normal
+2018-12-14 10:46:37 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-14 10:46:37 INFO case_log_info [caselog.py-8] 请求数据：{
+      "dataSourceId": "bHRz",
+      "methodId": "03A",
+      "CardInfo": {
+          "cardNumber": "98653232",
+          "cardBalance": "50"
+      }
+}
+2018-12-14 10:46:37 INFO case_log_info [caselog.py-9] 期望结果：{"code":200,"msg":"充值成功","result":{"cardBalance":"300","cardNumber":"98653232","cardStatus":0,"id":742319836,"userId":0},"success":true}
+2018-12-14 10:46:37 INFO case_log_info [caselog.py-10] 实际结果：{"code":200,"msg":"充值成功","result":{"cardBalance":"1150","cardNumber":"98653232","cardStatus":0,"id":742319836,"userId":0},"success":true}
+2018-12-14 10:46:37 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-14 10:46:38 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-14 10:46:38 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-14 10:46:38 INFO case_log_info [caselog.py-6] 请求用例：test_spend_money_noenough
+2018-12-14 10:46:38 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-14 10:46:38 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "04A",
+            "CardUser": {
+                "userId":8681
+            },
+            "CardInfo": {
+                "cardNumber": "9861332221",
+                "cardBalance": "50"
+            }
+}
+2018-12-14 10:46:38 INFO case_log_info [caselog.py-9] 期望结果：{"code":200,"msg":"对不起，您的余额不足，请充值!","success":false}
+2018-12-14 10:46:38 INFO case_log_info [caselog.py-10] 实际结果：{"code":200,"msg":"对不起，您的余额不足，请充值!","success":false}
+2018-12-14 10:46:38 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-14 10:46:38 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-14 10:46:38 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-14 10:46:38 INFO case_log_info [caselog.py-6] 请求用例：test_spend_money_null
+2018-12-14 10:46:38 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-14 10:46:38 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "04A",
+            "CardUser": {
+                "userId":8637
+            },
+            "CardInfo": {
+                "cardNumber": "98653232",
+                "cardBalance": ""
+            }
+}
+2018-12-14 10:46:38 INFO case_log_info [caselog.py-9] 期望结果：{"code":300,"msg":"消费金额不能为空","success":false}
+2018-12-14 10:46:38 INFO case_log_info [caselog.py-10] 实际结果：{"code":300,"msg":"消费金额不能为空","success":false}
+2018-12-14 10:46:38 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-14 10:46:38 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-14 10:46:38 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-14 10:46:38 INFO case_log_info [caselog.py-6] 请求用例：test_spend_normal
+2018-12-14 10:46:38 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-14 10:46:38 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "04A",
+            "CardUser": {
+                "userId":8681
+            },
+            "CardInfo": {
+                "cardNumber": "986532323",
+                "cardBalance": "1"
+            }
+        }
+2018-12-14 10:46:38 INFO case_log_info [caselog.py-9] 期望结果：{"code":200,"msg":"消费成功!","success":true}
+2018-12-14 10:46:38 INFO case_log_info [caselog.py-10] 实际结果：{"code":200,"msg":"消费成功!","success":true}
+2018-12-14 10:49:06 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-14 10:49:06 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-14 10:49:06 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-14 10:49:06 INFO case_log_info [caselog.py-6] 请求用例：test_add_card_exist
+2018-12-14 10:49:06 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-14 10:49:06 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "00A",
+            "CardInfo": {
+                "cardNumber": "98613321"
+            }
+        }
+2018-12-14 10:49:06 INFO case_log_info [caselog.py-9] 期望结果：{"code":5000,"msg":"该卡已添加","success":false}
+2018-12-14 10:49:06 INFO case_log_info [caselog.py-10] 实际结果：{"code":5000,"msg":"该卡已添加","success":false}
+2018-12-14 10:49:06 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-14 10:49:07 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-14 10:49:07 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-14 10:49:07 INFO case_log_info [caselog.py-6] 请求用例：test_add_methodId_invalid
+2018-12-14 10:49:07 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-14 10:49:07 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "00A1",
+            "CardInfo": {
+                "cardNumber": "98613321"
+            }
+        }
+2018-12-14 10:49:07 INFO case_log_info [caselog.py-9] 期望结果：{"code":199,"msg":"业务ID无效","success":false}
+2018-12-14 10:49:07 INFO case_log_info [caselog.py-10] 实际结果：{"code":199,"msg":"业务ID无效","success":false}
+2018-12-14 10:49:07 INFO db_change [db.py-27] delete from cardinfo where cardNumber='98613325'
+2018-12-14 10:49:07 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-14 10:49:07 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-14 10:49:07 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-14 10:49:07 INFO case_log_info [caselog.py-6] 请求用例：test_add_normal
+2018-12-14 10:49:07 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-14 10:49:07 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "00A",
+            "CardInfo": {
+            "cardNumber": "98613325"
+        }
+}
+2018-12-14 10:49:07 INFO case_log_info [caselog.py-9] 期望结果：{"code":200,"msg":"添加卡成功","success":false}
+2018-12-14 10:49:07 INFO case_log_info [caselog.py-10] 实际结果：{"code":200,"msg":"添加卡成功","success":false}
+2018-12-14 10:49:07 INFO db_change [db.py-27] delete from cardinfo where cardNumber='98613325'
+2018-12-14 10:49:07 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-14 10:49:07 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-14 10:49:07 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-14 10:49:07 INFO case_log_info [caselog.py-6] 请求用例：test_bind_card_noexist
+2018-12-14 10:49:07 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-14 10:49:07 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "01A",
+            "CardUser": {
+                "userName": "wangwu",
+                "idType": "1",
+                "idNumber": "35467890564"
+            },
+            "CardInfo": {
+                "cardNumber": "986133222555111"
+            }
+}
+2018-12-14 10:49:07 INFO case_log_info [caselog.py-9] 期望结果：{"code":5013,"msg":"加油卡号不存在","success":false}
+2018-12-14 10:49:07 INFO case_log_info [caselog.py-10] 实际结果：{"code":5013,"msg":"加油卡号不存在","success":false}
+2018-12-14 10:49:07 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-14 10:49:07 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-14 10:49:07 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-14 10:49:07 INFO case_log_info [caselog.py-6] 请求用例：test_bind_cardnum_null
+2018-12-14 10:49:07 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-14 10:49:07 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "01A",
+            "CardUser": {
+                "userName": "wangwu",
+                "idType": "1",
+                "idNumber": "3546789-0564"
+            },
+            "CardInfo": {
+                "cardNumber": ""
+            }
+}
+2018-12-14 10:49:07 INFO case_log_info [caselog.py-9] 期望结果：{"code":301,"msg":"卡号不能为空!","success":false}
+2018-12-14 10:49:07 INFO case_log_info [caselog.py-10] 实际结果：{"code":301,"msg":"卡号不能为空!","success":false}
+2018-12-14 10:49:07 INFO db_query [db.py-16] select userId from cardinfo where cardNumber='986133222'
+2018-12-14 10:49:08 INFO db_change [db.py-27] update cardinfo set cardstatus=null, userId=null where cardNumber='986133222'
+2018-12-14 10:49:08 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-14 10:49:08 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-14 10:49:08 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-14 10:49:08 INFO case_log_info [caselog.py-6] 请求用例：test_bind_success
+2018-12-14 10:49:08 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-14 10:49:08 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "01A",
+            "CardUser": {
+                "userName": "wangwu",
+                "idType": "1",
+                "idNumber": "3546789-0564"
+            },
+            "CardInfo": {
+                "cardNumber": "986133222"
+            }
+}
+2018-12-14 10:49:08 INFO case_log_info [caselog.py-9] 期望结果：{"code":5010,"msg":"绑定成功","result":{"UserId":8559},"success":true}
+2018-12-14 10:49:08 INFO case_log_info [caselog.py-10] 实际结果：{"code":5010,"msg":"绑定成功","result":{"UserId":8559},"success":true}
+2018-12-14 10:49:08 INFO db_change [db.py-27] update cardinfo set cardstatus=null, userId=null where cardNumber='986133222'
+2018-12-14 10:49:08 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-14 10:49:08 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-14 10:49:08 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-14 10:49:08 INFO case_log_info [caselog.py-6] 请求用例：test_bind_two
+2018-12-14 10:49:08 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-14 10:49:08 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "01A",
+            "CardUser": {
+                "userName": "wangwu",
+                "idType": "1",
+                "idNumber": "35467890564"
+            },
+            "CardInfo": {
+                "cardNumber": "98653232333"
+            }
+}
+2018-12-14 10:49:08 INFO case_log_info [caselog.py-9] 期望结果：{"code":5014,"msg":"每个用户只能绑定两张卡","success":false}
+2018-12-14 10:49:08 INFO case_log_info [caselog.py-10] 实际结果：{"code":5014,"msg":"每个用户只能绑定两张卡","success":false}
+2018-12-14 10:49:08 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-14 10:49:08 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "GET /gasStation/process?dataSourceId=bHRz&userId=8637&cardNumber=986532355521&methodId=02A HTTP/1.1" 200 None
+2018-12-14 10:49:08 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-14 10:49:08 INFO case_log_info [caselog.py-6] 请求用例：test_query_nomessage
+2018-12-14 10:49:08 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-14 10:49:08 INFO case_log_info [caselog.py-8] 请求数据：{
+       "dataSourceId": "bHRz",
+       "userId": "8637",
+       "cardNumber": "986532355521",
+       "methodId": "02A"
+}
+2018-12-14 10:49:08 INFO case_log_info [caselog.py-9] 期望结果：{"code":400,"msg":"无查询信息","success":false}
+2018-12-14 10:49:08 INFO case_log_info [caselog.py-10] 实际结果：{"code":400,"msg":"无查询信息","success":false}
+2018-12-14 10:49:08 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-14 10:49:09 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "GET /gasStation/process?dataSourceId=bHRz&userId=8681&cardNumber=986532323&methodId=02A HTTP/1.1" 200 None
+2018-12-14 10:49:09 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-14 10:49:09 INFO case_log_info [caselog.py-6] 请求用例：test_bind_success
+2018-12-14 10:49:09 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-14 10:49:09 INFO case_log_info [caselog.py-8] 请求数据：{
+       "dataSourceId": "bHRz",
+       "userId": "8681",
+       "cardNumber": "986532323",
+       "methodId": "02A"
+}
+2018-12-14 10:49:09 INFO case_log_info [caselog.py-9] 期望结果：{"code":200,"msg":"成功返回","result":{"cardBalance":"991","cardNumber":"986532323","cardStatus":"已经被绑定,正常使用中","consumptionDetails":["消费金额:1,时间:2018-12-06 10:30:38","消费金额:1,时间:2018-12-05 20:12:13","消费金额:1,时间:2018-12-05 17:35:59"],"rechargeDetails":[]},"success":true}
+2018-12-14 10:49:09 INFO case_log_info [caselog.py-10] 实际结果：{"code":200,"msg":"成功返回","result":{"cardBalance":"983","cardNumber":"986532323","cardStatus":"已经被绑定,正常使用中","consumptionDetails":["消费金额:1,时间:2018-12-14 10:47:57","消费金额:1,时间:2018-12-12 15:56:34","消费金额:1,时间:2018-12-12 15:55:47"],"rechargeDetails":[]},"success":true}
+2018-12-14 10:49:09 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-14 10:49:09 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-14 10:49:09 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-14 10:49:09 INFO case_log_info [caselog.py-6] 请求用例：test_recharge_cardnum_no
+2018-12-14 10:49:09 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-14 10:49:09 INFO case_log_info [caselog.py-8] 请求数据：{
+       "dataSourceId": "bHRz",
+       "methodId": "03A",
+       "CardInfo": {
+            "cardNumber": "9865323211111",
+            "cardBalance": "50"
+       }
+}
+2018-12-14 10:49:09 INFO case_log_info [caselog.py-9] 期望结果：{"code":5013,"msg":"加油卡号不存在","success":false}
+2018-12-14 10:49:09 INFO case_log_info [caselog.py-10] 实际结果：{"code":5013,"msg":"加油卡号不存在","success":false}
+2018-12-14 10:49:09 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-14 10:49:09 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-14 10:49:09 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-14 10:49:09 INFO case_log_info [caselog.py-6] 请求用例：test_recharge_money_null
+2018-12-14 10:49:09 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-14 10:49:09 INFO case_log_info [caselog.py-8] 请求数据：{
+      "dataSourceId": "bHRz",
+      "methodId": "03A",
+      "CardInfo": {
+            "cardNumber": "98653232",
+            "cardBalance": ""
+       }
+}
+2018-12-14 10:49:09 INFO case_log_info [caselog.py-9] 期望结果：{"code":300,"msg":"金额不能为空","success":false}
+2018-12-14 10:49:09 INFO case_log_info [caselog.py-10] 实际结果：{"code":300,"msg":"金额不能为空","success":false}
+2018-12-14 10:49:09 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-14 10:49:09 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-14 10:49:09 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-14 10:49:09 INFO case_log_info [caselog.py-6] 请求用例：test_recharge_normal
+2018-12-14 10:49:09 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-14 10:49:09 INFO case_log_info [caselog.py-8] 请求数据：{
+      "dataSourceId": "bHRz",
+      "methodId": "03A",
+      "CardInfo": {
+          "cardNumber": "98653232",
+          "cardBalance": "50"
+      }
+}
+2018-12-14 10:49:09 INFO case_log_info [caselog.py-9] 期望结果：{"code":200,"msg":"充值成功","result":{"cardBalance":"300","cardNumber":"98653232","cardStatus":0,"id":742319836,"userId":0},"success":true}
+2018-12-14 10:49:09 INFO case_log_info [caselog.py-10] 实际结果：{"code":200,"msg":"充值成功","result":{"cardBalance":"1200","cardNumber":"98653232","cardStatus":0,"id":742319836,"userId":0},"success":true}
+2018-12-14 10:49:09 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-14 10:49:09 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-14 10:49:09 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-14 10:49:09 INFO case_log_info [caselog.py-6] 请求用例：test_spend_money_noenough
+2018-12-14 10:49:09 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-14 10:49:09 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "04A",
+            "CardUser": {
+                "userId":8681
+            },
+            "CardInfo": {
+                "cardNumber": "9861332221",
+                "cardBalance": "50"
+            }
+}
+2018-12-14 10:49:09 INFO case_log_info [caselog.py-9] 期望结果：{"code":200,"msg":"对不起，您的余额不足，请充值!","success":false}
+2018-12-14 10:49:09 INFO case_log_info [caselog.py-10] 实际结果：{"code":200,"msg":"对不起，您的余额不足，请充值!","success":false}
+2018-12-14 10:49:09 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-14 10:49:09 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-14 10:49:09 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-14 10:49:09 INFO case_log_info [caselog.py-6] 请求用例：test_spend_money_null
+2018-12-14 10:49:09 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-14 10:49:09 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "04A",
+            "CardUser": {
+                "userId":8637
+            },
+            "CardInfo": {
+                "cardNumber": "98653232",
+                "cardBalance": ""
+            }
+}
+2018-12-14 10:49:09 INFO case_log_info [caselog.py-9] 期望结果：{"code":300,"msg":"消费金额不能为空","success":false}
+2018-12-14 10:49:09 INFO case_log_info [caselog.py-10] 实际结果：{"code":300,"msg":"消费金额不能为空","success":false}
+2018-12-14 10:49:09 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-14 10:49:09 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-14 10:49:09 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-14 10:49:09 INFO case_log_info [caselog.py-6] 请求用例：test_spend_normal
+2018-12-14 10:49:09 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-14 10:49:09 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "04A",
+            "CardUser": {
+                "userId":8681
+            },
+            "CardInfo": {
+                "cardNumber": "986532323",
+                "cardBalance": "1"
+            }
+        }
+2018-12-14 10:49:09 INFO case_log_info [caselog.py-9] 期望结果：{"code":200,"msg":"消费成功!","success":true}
+2018-12-14 10:49:09 INFO case_log_info [caselog.py-10] 实际结果：{"code":200,"msg":"消费成功!","success":true}
+2018-12-14 10:52:03 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-14 10:52:03 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-14 10:52:03 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-14 10:52:03 INFO case_log_info [caselog.py-6] 请求用例：test_add_card_exist
+2018-12-14 10:52:03 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-14 10:52:03 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "00A",
+            "CardInfo": {
+                "cardNumber": "98613321"
+            }
+        }
+2018-12-14 10:52:03 INFO case_log_info [caselog.py-9] 期望结果：{"code":5000,"msg":"该卡已添加","success":false}
+2018-12-14 10:52:03 INFO case_log_info [caselog.py-10] 实际结果：{"code":5000,"msg":"该卡已添加","success":false}
+2018-12-14 10:52:03 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-14 10:52:03 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-14 10:52:03 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-14 10:52:03 INFO case_log_info [caselog.py-6] 请求用例：test_add_methodId_invalid
+2018-12-14 10:52:03 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-14 10:52:03 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "00A1",
+            "CardInfo": {
+                "cardNumber": "98613321"
+            }
+        }
+2018-12-14 10:52:03 INFO case_log_info [caselog.py-9] 期望结果：{"code":199,"msg":"业务ID无效","success":false}
+2018-12-14 10:52:03 INFO case_log_info [caselog.py-10] 实际结果：{"code":199,"msg":"业务ID无效","success":false}
+2018-12-14 10:52:03 INFO db_change [db.py-27] delete from cardinfo where cardNumber='98613325'
+2018-12-14 10:52:03 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-14 10:52:04 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-14 10:52:04 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-14 10:52:04 INFO case_log_info [caselog.py-6] 请求用例：test_add_normal
+2018-12-14 10:52:04 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-14 10:52:04 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "00A",
+            "CardInfo": {
+            "cardNumber": "98613325"
+        }
+}
+2018-12-14 10:52:04 INFO case_log_info [caselog.py-9] 期望结果：{"code":200,"msg":"添加卡成功","success":false}
+2018-12-14 10:52:04 INFO case_log_info [caselog.py-10] 实际结果：{"code":200,"msg":"添加卡成功","success":false}
+2018-12-14 10:52:04 INFO db_change [db.py-27] delete from cardinfo where cardNumber='98613325'
+2018-12-14 10:52:04 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-14 10:52:04 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-14 10:52:04 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-14 10:52:04 INFO case_log_info [caselog.py-6] 请求用例：test_bind_card_noexist
+2018-12-14 10:52:04 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-14 10:52:04 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "01A",
+            "CardUser": {
+                "userName": "wangwu",
+                "idType": "1",
+                "idNumber": "35467890564"
+            },
+            "CardInfo": {
+                "cardNumber": "986133222555111"
+            }
+}
+2018-12-14 10:52:04 INFO case_log_info [caselog.py-9] 期望结果：{"code":5013,"msg":"加油卡号不存在","success":false}
+2018-12-14 10:52:04 INFO case_log_info [caselog.py-10] 实际结果：{"code":5013,"msg":"加油卡号不存在","success":false}
+2018-12-14 10:52:04 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-14 10:52:04 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-14 10:52:04 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-14 10:52:04 INFO case_log_info [caselog.py-6] 请求用例：test_bind_cardnum_null
+2018-12-14 10:52:04 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-14 10:52:04 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "01A",
+            "CardUser": {
+                "userName": "wangwu",
+                "idType": "1",
+                "idNumber": "3546789-0564"
+            },
+            "CardInfo": {
+                "cardNumber": ""
+            }
+}
+2018-12-14 10:52:04 INFO case_log_info [caselog.py-9] 期望结果：{"code":301,"msg":"卡号不能为空!","success":false}
+2018-12-14 10:52:04 INFO case_log_info [caselog.py-10] 实际结果：{"code":301,"msg":"卡号不能为空!","success":false}
+2018-12-14 10:52:04 INFO db_query [db.py-16] select userId from cardinfo where cardNumber='986133222'
+2018-12-14 10:52:04 INFO db_change [db.py-27] update cardinfo set cardstatus=null, userId=null where cardNumber='986133222'
+2018-12-14 10:52:04 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-14 10:52:05 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-14 10:52:05 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-14 10:52:05 INFO case_log_info [caselog.py-6] 请求用例：test_bind_success
+2018-12-14 10:52:05 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-14 10:52:05 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "01A",
+            "CardUser": {
+                "userName": "wangwu",
+                "idType": "1",
+                "idNumber": "3546789-0564"
+            },
+            "CardInfo": {
+                "cardNumber": "986133222"
+            }
+}
+2018-12-14 10:52:05 INFO case_log_info [caselog.py-9] 期望结果：{"code":5010,"msg":"绑定成功","result":{"UserId":8559},"success":true}
+2018-12-14 10:52:05 INFO case_log_info [caselog.py-10] 实际结果：{"code":5010,"msg":"绑定成功","result":{"UserId":8559},"success":true}
+2018-12-14 10:52:05 INFO db_change [db.py-27] update cardinfo set cardstatus=null, userId=null where cardNumber='986133222'
+2018-12-14 10:52:05 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-14 10:52:05 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-14 10:52:05 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-14 10:52:05 INFO case_log_info [caselog.py-6] 请求用例：test_bind_two
+2018-12-14 10:52:05 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-14 10:52:05 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "01A",
+            "CardUser": {
+                "userName": "wangwu",
+                "idType": "1",
+                "idNumber": "35467890564"
+            },
+            "CardInfo": {
+                "cardNumber": "98653232333"
+            }
+}
+2018-12-14 10:52:05 INFO case_log_info [caselog.py-9] 期望结果：{"code":5014,"msg":"每个用户只能绑定两张卡","success":false}
+2018-12-14 10:52:05 INFO case_log_info [caselog.py-10] 实际结果：{"code":5014,"msg":"每个用户只能绑定两张卡","success":false}
+2018-12-14 10:52:05 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-14 10:52:05 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "GET /gasStation/process?dataSourceId=bHRz&userId=8637&cardNumber=986532355521&methodId=02A HTTP/1.1" 200 None
+2018-12-14 10:52:05 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-14 10:52:05 INFO case_log_info [caselog.py-6] 请求用例：test_query_nomessage
+2018-12-14 10:52:05 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-14 10:52:05 INFO case_log_info [caselog.py-8] 请求数据：{
+       "dataSourceId": "bHRz",
+       "userId": "8637",
+       "cardNumber": "986532355521",
+       "methodId": "02A"
+}
+2018-12-14 10:52:05 INFO case_log_info [caselog.py-9] 期望结果：{"code":400,"msg":"无查询信息","success":false}
+2018-12-14 10:52:05 INFO case_log_info [caselog.py-10] 实际结果：{"code":400,"msg":"无查询信息","success":false}
+2018-12-14 10:52:05 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-14 10:52:05 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "GET /gasStation/process?dataSourceId=bHRz&userId=8681&cardNumber=986532323&methodId=02A HTTP/1.1" 200 None
+2018-12-14 10:52:05 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-14 10:52:05 INFO case_log_info [caselog.py-6] 请求用例：test_bind_success
+2018-12-14 10:52:05 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-14 10:52:05 INFO case_log_info [caselog.py-8] 请求数据：{
+       "dataSourceId": "bHRz",
+       "userId": "8681",
+       "cardNumber": "986532323",
+       "methodId": "02A"
+}
+2018-12-14 10:52:05 INFO case_log_info [caselog.py-9] 期望结果：{"code":200,"msg":"成功返回","result":{"cardBalance":"991","cardNumber":"986532323","cardStatus":"已经被绑定,正常使用中","consumptionDetails":["消费金额:1,时间:2018-12-06 10:30:38","消费金额:1,时间:2018-12-05 20:12:13","消费金额:1,时间:2018-12-05 17:35:59"],"rechargeDetails":[]},"success":true}
+2018-12-14 10:52:05 INFO case_log_info [caselog.py-10] 实际结果：{"code":200,"msg":"成功返回","result":{"cardBalance":"982","cardNumber":"986532323","cardStatus":"已经被绑定,正常使用中","consumptionDetails":["消费金额:1,时间:2018-12-14 10:50:28","消费金额:1,时间:2018-12-14 10:47:57","消费金额:1,时间:2018-12-12 15:56:34"],"rechargeDetails":[]},"success":true}
+2018-12-14 10:52:05 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-14 10:52:05 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-14 10:52:05 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-14 10:52:05 INFO case_log_info [caselog.py-6] 请求用例：test_recharge_cardnum_no
+2018-12-14 10:52:05 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-14 10:52:05 INFO case_log_info [caselog.py-8] 请求数据：{
+       "dataSourceId": "bHRz",
+       "methodId": "03A",
+       "CardInfo": {
+            "cardNumber": "9865323211111",
+            "cardBalance": "50"
+       }
+}
+2018-12-14 10:52:05 INFO case_log_info [caselog.py-9] 期望结果：{"code":5013,"msg":"加油卡号不存在","success":false}
+2018-12-14 10:52:05 INFO case_log_info [caselog.py-10] 实际结果：{"code":5013,"msg":"加油卡号不存在","success":false}
+2018-12-14 10:52:05 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-14 10:52:05 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-14 10:52:05 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-14 10:52:05 INFO case_log_info [caselog.py-6] 请求用例：test_recharge_money_null
+2018-12-14 10:52:05 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-14 10:52:05 INFO case_log_info [caselog.py-8] 请求数据：{
+      "dataSourceId": "bHRz",
+      "methodId": "03A",
+      "CardInfo": {
+            "cardNumber": "98653232",
+            "cardBalance": ""
+       }
+}
+2018-12-14 10:52:05 INFO case_log_info [caselog.py-9] 期望结果：{"code":300,"msg":"金额不能为空","success":false}
+2018-12-14 10:52:05 INFO case_log_info [caselog.py-10] 实际结果：{"code":300,"msg":"金额不能为空","success":false}
+2018-12-14 10:52:05 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-14 10:52:06 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-14 10:52:06 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-14 10:52:06 INFO case_log_info [caselog.py-6] 请求用例：test_recharge_normal
+2018-12-14 10:52:06 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-14 10:52:06 INFO case_log_info [caselog.py-8] 请求数据：{
+      "dataSourceId": "bHRz",
+      "methodId": "03A",
+      "CardInfo": {
+          "cardNumber": "98653232",
+          "cardBalance": "50"
+      }
+}
+2018-12-14 10:52:06 INFO case_log_info [caselog.py-9] 期望结果：{"code":200,"msg":"充值成功","result":{"cardBalance":"300","cardNumber":"98653232","cardStatus":0,"id":742319836,"userId":0},"success":true}
+2018-12-14 10:52:06 INFO case_log_info [caselog.py-10] 实际结果：{"code":200,"msg":"充值成功","result":{"cardBalance":"1250","cardNumber":"98653232","cardStatus":0,"id":742319836,"userId":0},"success":true}
+2018-12-14 10:52:06 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-14 10:52:06 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-14 10:52:06 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-14 10:52:06 INFO case_log_info [caselog.py-6] 请求用例：test_spend_money_noenough
+2018-12-14 10:52:06 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-14 10:52:06 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "04A",
+            "CardUser": {
+                "userId":8681
+            },
+            "CardInfo": {
+                "cardNumber": "9861332221",
+                "cardBalance": "50"
+            }
+}
+2018-12-14 10:52:06 INFO case_log_info [caselog.py-9] 期望结果：{"code":200,"msg":"对不起，您的余额不足，请充值!","success":false}
+2018-12-14 10:52:06 INFO case_log_info [caselog.py-10] 实际结果：{"code":200,"msg":"对不起，您的余额不足，请充值!","success":false}
+2018-12-14 10:52:06 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-14 10:52:06 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-14 10:52:06 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-14 10:52:06 INFO case_log_info [caselog.py-6] 请求用例：test_spend_money_null
+2018-12-14 10:52:06 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-14 10:52:06 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "04A",
+            "CardUser": {
+                "userId":8637
+            },
+            "CardInfo": {
+                "cardNumber": "98653232",
+                "cardBalance": ""
+            }
+}
+2018-12-14 10:52:06 INFO case_log_info [caselog.py-9] 期望结果：{"code":300,"msg":"消费金额不能为空","success":false}
+2018-12-14 10:52:06 INFO case_log_info [caselog.py-10] 实际结果：{"code":300,"msg":"消费金额不能为空","success":false}
+2018-12-14 10:52:06 DEBUG _new_conn [connectionpool.py-208] Starting new HTTP connection (1): 115.28.108.130
+2018-12-14 10:52:06 DEBUG _make_request [connectionpool.py-396] http://115.28.108.130:8080 "POST /gasStation/process HTTP/1.1" 200 None
+2018-12-14 10:52:06 INFO case_log_info [caselog.py-5] ====================================================================================================
+2018-12-14 10:52:06 INFO case_log_info [caselog.py-6] 请求用例：test_spend_normal
+2018-12-14 10:52:06 INFO case_log_info [caselog.py-7] 接口地址：http://115.28.108.130:8080/gasStation/process
+2018-12-14 10:52:06 INFO case_log_info [caselog.py-8] 请求数据：{
+            "dataSourceId": "bHRz",
+            "methodId": "04A",
+            "CardUser": {
+                "userId":8681
+            },
+            "CardInfo": {
+                "cardNumber": "986532323",
+                "cardBalance": "1"
+            }
+        }
+2018-12-14 10:52:06 INFO case_log_info [caselog.py-9] 期望结果：{"code":200,"msg":"消费成功!","success":true}
+2018-12-14 10:52:06 INFO case_log_info [caselog.py-10] 实际结果：{"code":200,"msg":"消费成功!","success":true}
+2018-12-14 10:52:06 INFO <module> [run_test.py-15] 邮件发送成功
